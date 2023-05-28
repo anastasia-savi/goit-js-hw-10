@@ -14,10 +14,11 @@ export function fetchBreeds() {
 
 export function fetchCatByBreed(breedId) {
   const URL = 'https://api.thecatapi.com/v1/images/search';
+
   const searchParams = new URLSearchParams({
     'x-api-key':
       'live_KxjO1LcWhjOXvVYjxbOy1HE38bZckXPzM6vXMkvoNSERNAIbkngZrerDYSAUtsy6',
-    breed_ids: breedId,
+    breed_id: `${breedId}`,
   });
 
   return fetch(`${URL}?${searchParams}`).then(response => {
